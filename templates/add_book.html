@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add_book</title>
+</head>
+<body>
+<form action="/add_book/" method="post">
+    <input type="text" name="add_book_name" value="">
+    <select name="press_id" >
+        {% for press in press_obj %}
+            <option value="{{press.id }}">{{ press.name}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>

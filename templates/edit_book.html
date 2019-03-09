@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit_book</title>
+
+</head>
+<body>
+<form action="/edit_book/?id={{ book_obj.id }}" method="post">
+    <input type="text" name="book_name" value="{{ book_obj.name }}">
+    <select name="press_id" >
+        {% for press in press_list %}
+            {% if book_obj.press == press %}
+                <option selected value="{{ press.id }}">{{ press.name }}</option>
+                {% else %}
+                <option value="{{ press.id }}">{{ press.name }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>

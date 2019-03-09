@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>press_list</title>
+</head>
+<body>
+<h5>出版社展示</h5>
+
+
+
+<h1>asdasdq123</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>出版社id</th>
+        <th>出版社名字</th>
+        <th>删除操作</th>
+        <th>编辑操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for press in ret %}
+        <tr>
+            <th>{{ forloop.counter }}</th>
+            <th>{{ press.id }}</th>
+            <th>{{ press.name }}</th>
+            <th><a href="/del_press/?id={{ press.id }}">删除</a></th>
+            <th><a href="/edit_press/?id={{ press.id }}">编辑</a></th>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+<div>
+    <a href="/add_press/" >点击添加</a>
+</div>
+
+</table>
+</body>
+</html>

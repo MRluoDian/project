@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>author_list</title>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>作者id</th>
+                <th>作者名字</th>
+                <th>作者书籍</th>
+                <th>删除操作</th>
+                <th>编辑操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for author_obj in author_obj_list %}  {#  获得所有的作者对象 #}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ author_obj.id }}</td>
+            <td>{{ author_obj.name }}</td>
+
+            <td>
+                {% for books in author_obj.books.all %}   {# 作者对象  .  对应关系  .  所有相关的书籍 #}
+                    {% if forloop.last %}
+                        《{{ books.name }}》   {#  第三表关系获得书的对象拿出他的名字来 #}
+                    {% else %}
+                        《{{ books.name }}》，
+                    {% endif %}
+                    {% empty %}           {# 如果判断完有空值（作者对应的没有书籍） #}
+                            暂无出品
+                {% endfor %}
+                </td>
+                <td><a href="/del_author/?id={{ author_obj.id }}">删除</a></td>
+                <td><a href="/edit_author/?id={{ author_obj.id }}">编辑</a></td>
+                {% endfor %}
+
+
+         </tr>
+        </tbody>
+    </table>
+
+    <a href="/add_author/">点击添加作者</a>
+</body>
+</html>

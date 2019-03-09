@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit_author</title>
+</head>
+<body>
+<form action="" method="post">
+    <input type="text" name="author_name" value="{{ author_obj.name }}">
+    <select name="book_obj_ids" multiple>
+        {% for book_obj in book_obj_list %}
+            <option value="{{ book_obj.id }}">{{ book_obj.name }}</option>
+        {% endfor %}
+
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>
