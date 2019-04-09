@@ -160,3 +160,6 @@ def upload(request):
 def quzhiqiang(request):
     return HttpResponse('ooookkkkk')
 
+def qu666(request):
+    pass
+
