@@ -158,3 +158,6 @@ def upload(request):
 
 def dalei():
 	pass
+	
+def dalei22():
+	pass
