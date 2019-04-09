@@ -156,3 +156,5 @@ def upload(request):
     #第一次给用户一个界面
     return render(request,'upload.html')
 
+def dalei():
+	pass
